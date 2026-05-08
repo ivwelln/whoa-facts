@@ -1,15 +1,17 @@
 from fastapi import Request, Response
 from fastapi.routing import APIRouter
 from fastapi.templating import Jinja2Templates
+from app.state import fact_cache
 
 router = APIRouter()
 
 templates = Jinja2Templates(directory="app/templates")
 
 @router.get("/")
-async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+async def index(request: Request):
+    fact = await fact_cache.get()
+    return templates.TemplateResponse(request=request, name="index.html", context={"fact": fact})
 
 @router.get("/history")
-async def read_history(request: Request):
-    return templates.TemplateResponse("history.html", {"request": request})
+async def history(request: Request):
+    return templates.TemplateResponse(request=request, name="history.html")

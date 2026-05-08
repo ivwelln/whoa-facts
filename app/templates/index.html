@@ -1,23 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WHOA facts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div>
-        <div>
-            <h1></h1>
-        </div>
-        <div>
-            <p>
+    <main class="page">
+        <section class="fact">
+            <div class="fact-category" id="category">&nbsp;</div>
 
-            </p>
-        </div>
-    </div>
-    <div>
-        <h1>Whoa Facts</h1>
-    </div>
+            <div class="fact-text" id="fact-text">
+                <div class="skeleton" aria-hidden="true">
+                    <span class="skeleton-line"></span>
+                    <span class="skeleton-line"></span>
+                    <span class="skeleton-line short"></span>
+                </div>
+            </div>
+
+            <div class="attribution">
+                <div class="attribution-line" aria-hidden="true"></div>
+                <div class="attribution-text" id="source">Сгенерировано нейросетью — Gemini. Могут быть ошибки.</div>
+            </div>
+        </section>
+
+        <section class="brand">
+            <h1 class="brand-title">WHOA facts</h1>
+            <button class="more-link" id="more-btn" type="button">Больше фактов</button>
+        </section>
+    </main>
+
+    <script src="/static/js/main.js"></script>
 </body>
 </html>

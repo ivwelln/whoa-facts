@@ -1,13 +1,18 @@
-from app.services.claude import get_fact_from_claude
+from app.services.gemini import generate_fact
+from app.crud.fact import create_fact
+from app.models.topic import Topic
 
-async def fetch_and_store_fact(db):
-    topic = "space"  # Example topic, can be dynamic
-    fact = await get_fact_from_claude(topic)
-    
-    # Here you would add logic to store the fact in the database using the db session
-    # For example:
-    # new_fact = FactModel(content=fact, topic=topic)
-    # db.add(new_fact)
-    # await db.commit()
-    
+async def generate_and_store_fact(db, topic: Topic | None, source: str):
+    if source.lower() != "claude":
+        raise ValueError("Unsupported source")
+
+    topic_name = topic.name if topic else "Интересный факт"
+    text = await generate_fact(topic_name)
+    fact = await create_fact(
+        db,
+        content=text,
+        topic_id=topic.id if topic else None,
+        source=source,
+    )
+    fact.topic = topic
     return fact
