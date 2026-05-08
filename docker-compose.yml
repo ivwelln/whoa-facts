@@ -20,6 +20,8 @@ services:
     depends_on:
       db: { condition: service_healthy }
     command: alembic upgrade head
+    volumes:
+      - ./alembic:/code/alembic
 
   app:
     build: .
@@ -33,6 +35,8 @@ services:
         condition: service_completed_successfully
     ports:
       - "8000:8000"
+    volumes:
+      - ./alembic:/code/alembic
 
 
 volumes:

@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     GEMINI_API_KEY: str
     GEMINI_INSTRUCTION: str
     
+    YANDEX_API_KEY: str
+    
     TOPIC_MODE: str
     
     ADMIN_TOKEN: str

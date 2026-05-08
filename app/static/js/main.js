@@ -1,4 +1,4 @@
-const SOURCE_TEXT = "Сгенерировано нейросетью — Gemini. Могут быть ошибки.";
+const SOURCE_TEXT = "Сгенерировано нейросетью — YandexGPT. Могут быть ошибки.";
 
 const els = {
   category: document.getElementById('category'),

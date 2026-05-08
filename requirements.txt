@@ -1,6 +1,7 @@
 uvicorn
 anthropic
 google-genai
+openai
 python-dotenv
 python-multipart
 fastapi
@@ -12,3 +13,4 @@ alembic
 asyncpg
 apscheduler
 tzdata
+greenlet
