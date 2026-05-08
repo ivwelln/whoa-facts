@@ -1,0 +1,11 @@
+uvicorn
+anthropic
+python-dotenv
+python-multipart
+fastapi
+pydantic-settings
+pydantic
+jinja2
+sqlalchemy
+alembic
+asyncpg
