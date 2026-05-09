@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История · WHOA facts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <main class="page page--history">
+        <header class="history-header">
+            <h1 class="history-title">WHOA facts</h1>
+            <p class="history-subtitle">Как насчёт того, чтобы узнать больше интересного?</p>
+            <a class="back-link" href="/">
+                <span class="back-link-arrow">←</span>
+                <span>На главную</span>
+            </a>
+        </header>
+
+        <section class="feed" id="feed" aria-live="polite"></section>
+
+        <div class="feed-actions">
+            <button class="load-more" id="load-more" type="button" hidden>Показать ещё</button>
+        </div>
+    </main>
+
+    <script src="/static/js/history.js"></script>
+</body>
+</html>

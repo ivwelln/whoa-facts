@@ -41,6 +41,5 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(pages.router)
 app.include_router(fact.router, prefix="/api/v1")
 app.include_router(topic.router, prefix="/api/v1")
-
-## TODO app.include_router(history.router, prefix="/api/v1")
+app.include_router(history.router, prefix="/api/v1")
 
