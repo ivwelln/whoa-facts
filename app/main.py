@@ -11,7 +11,7 @@ from app import scheduler as app_scheduler
 from app.database.session import async_session
 from app.crud.fact import get_latest_fact
 
-from app.routes.api.v1 import fact, history, topic
+from app.routes.api.v1 import fact, history, topic, auth
 from app.routes import pages
 
 
@@ -42,4 +42,5 @@ app.include_router(pages.router)
 app.include_router(fact.router, prefix="/api/v1")
 app.include_router(topic.router, prefix="/api/v1")
 app.include_router(history.router, prefix="/api/v1")
+app.include_router(auth.router, prefix="/api/v1")
 

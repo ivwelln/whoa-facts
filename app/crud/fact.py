@@ -1,4 +1,4 @@
-from sqlalchemy import select
+from sqlalchemy import select, delete
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from app.models.fact import Fact
@@ -32,3 +32,10 @@ async def list_facts(db: AsyncSession, limit: int = 20, cursor: datetime | None 
     facts = result.scalars().all()
     next_cursor = facts[-1].created_at if len(facts) == limit else None
     return facts, next_cursor
+
+async def delete_by_id(db: AsyncSession, fact_id: int):
+    result = await db.execute(
+        delete(Fact)
+        .where(Fact.id == fact_id)
+    )
+    return result.rowcount > 0

@@ -14,4 +14,8 @@ class FactCache:
         async with self._lock:
             return self._fact
         
+    async def clear(self) -> None:
+        async with self._lock:
+            self._fact = None
+        
 fact_cache = FactCache()

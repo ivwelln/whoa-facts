@@ -10,8 +10,12 @@ templates = Jinja2Templates(directory="app/templates")
 @router.get("/")
 async def index(request: Request):
     fact = await fact_cache.get()
-    return templates.TemplateResponse(request=request, name="index.html", context={"fact": fact})
+    return templates.TemplateResponse(request, "index.html", context={"fact": fact})
 
 @router.get("/history")
 async def history(request: Request):
-    return templates.TemplateResponse(request=request, name="history.html")
+    return templates.TemplateResponse(request, "history.html")
+
+@router.get("/admin")
+async def admin(request: Request):
+    return templates.TemplateResponse(request, "admin.html")

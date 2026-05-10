@@ -4,7 +4,6 @@ const els = {
   category: document.getElementById('category'),
   factText: document.getElementById('fact-text'),
   source:   document.getElementById('source'),
-  moreBtn:  document.getElementById('more-btn'),
 };
 
 const SKELETON_HTML = `
@@ -59,11 +58,5 @@ async function load() {
     showError('Не удалось загрузить факт. Попробуйте обновить страницу.');
   }
 }
-
-els.moreBtn.addEventListener('click', async () => {
-  els.moreBtn.disabled = true;
-  await load();
-  els.moreBtn.disabled = false;
-});
 
 load();
